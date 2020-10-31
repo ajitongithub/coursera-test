@@ -12,7 +12,7 @@ body{
     
 }
 .article-style{
-    margin: 5px;
+    margin: 2px auto;
     color: lightcyan;
     background-color: seagreen;
     padding: 5px;
@@ -58,30 +58,32 @@ h2{
 }
 /* Media queries */
 @media (max-width: 576px) { /* mobile or XS version*/
-  
+    .container-fluid,.container, .container-sm, .container-md{
+      max-width: 95%;
+  }
 }
 
 @media (min-width: 577px) {
-  .container, .container-sm, .container-md{
+  .container-fluid,.container, .container-sm, .container-md{
       max-width: 95%;
   }
 }
 @media (min-width: 768px) {
- .hidden-lg{
+ .hidden-md{
       display: none !important;
       visibility: hidden;
   }
 }
 
 @media (min-width: 992px) {
-  .hidden-lg{
+  .hidden-md{
       display: none !important;
       visibility: hidden;
   }
 }
 
 @media (min-width: 1200px) {
-    .hidden-lg{
+    .hidden-md{
       display: none !important;
       visibility: hidden;
   }
