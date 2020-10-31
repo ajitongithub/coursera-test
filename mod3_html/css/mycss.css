@@ -67,7 +67,10 @@ h2{
   }
 }
 @media (min-width: 768px) {
-
+ .hidden-lg{
+      display: none !important;
+      visibility: hidden;
+  }
 }
 
 @media (min-width: 992px) {
