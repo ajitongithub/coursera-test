@@ -1,0 +1,88 @@
+/* Ajit CSS File */
+*,html{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+}
+.bg-apa{
+    background-color: lightcoral;
+    
+}
+.article-style{
+    margin: 5px;
+    color: lightcyan;
+    background-color: seagreen;
+    padding: 5px;
+}
+.navbar-header{    
+   width: 100%;
+}
+#collapsable-nav{
+ 
+    background-color: lightgreen;
+}
+#nav-list{
+color: black;
+text-align: center;
+}
+#nav-list li{ 
+    padding: 10px;
+    border-bottom: solid 2px black;
+}
+.navbar-brand{
+    float: left;
+    color: white !important;
+    font-size: 2rem;    
+}
+.navbar-toggler{
+    float: right; 
+    font-size: 2rem;
+}
+.heading-center{
+    text-align: center;
+}
+.navbar-right{
+    float: right;
+}
+
+h2{
+    width: 100%;
+    text-align: center;
+}
+.jumbotron{
+    background-color: lightblue;
+    box-sizing: border-box;
+}
+/* Media queries */
+@media (max-width: 576px) { /* mobile or XS version*/
+  
+}
+
+@media (min-width: 577px) {
+  .container, .container-sm, .container-md{
+      max-width: 95%;
+  }
+}
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+  .hidden-lg{
+      display: none !important;
+      visibility: hidden;
+  }
+}
+
+@media (min-width: 1200px) {
+    .hidden-lg{
+      display: none !important;
+      visibility: hidden;
+  }
+  .row{
+    box-sizing: border-box;   
+  }
+}
