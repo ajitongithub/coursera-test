@@ -34,35 +34,38 @@ WARNING!!! WARNING!!!
 // See Lecture 52, part 2
 // (Note, Step 2 will be done in the SpeakHello.js file.)
 // console.log(window);
-var names = ["Yaakov", "John", "jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
-var reg_test = new RegExp(/^j/);
-// STEP 10:
-// Loop over the names array and say either 'Hello' or "Good Bye"
-// using the 'speak' method or either helloSpeaker's or byeSpeaker's
-// 'speak' method.
-// See Lecture 50, part 1
-for (var namen in names) {
+(function(window){
+    var names = ["Yaakov", "John", "jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
+    var reg_test = new RegExp(/^j/);
+    // STEP 10:
+    // Loop over the names array and say either 'Hello' or "Good Bye"
+    // using the 'speak' method or either helloSpeaker's or byeSpeaker's
+    // 'speak' method.
+    // See Lecture 50, part 1
+    for (var namen in names) {
 
-  // window.name = names[namen];
-  console.log(window);
-  // STEP 11:
-  // Retrieve the first letter of the current name in the loop.
-  // Use the string object's 'charAt' function. Since we are looking for
-  // names that start with either upper case or lower case 'J'/'j', call
-  // string object's 'toLowerCase' method on the result so we can compare
-  // to lower case character 'j' afterwards.
-  // Look up these methods on Mozilla Developer Network web site if needed.
-  // var firstLetter =
+      // window.name = names[namen];
+      //console.log(byeSpeaker.speak("HS"));
+      // STEP 11:
+      // Retrieve the first letter of the current name in the loop.
+      // Use the string object's 'charAt' function. Since we are looking for
+      // names that start with either upper case or lower case 'J'/'j', call
+      // string object's 'toLowerCase' method on the result so we can compare
+      // to lower case character 'j' afterwards.
+      // Look up these methods on Mozilla Developer Network web site if needed.
+      // var firstLetter =
 
-  // STEP 12:
-  // Compare the 'firstLetter' retrieved in STEP 11 to lower case
-  // 'j'. If the same, call byeSpeaker's 'speak' method with the current name
-  // in the loop. Otherwise, call helloSpeaker's 'speak' method with the current
-  // name in the loop.
-  if (reg_test.test(names[namen].toLowerCase())) {
-    console.log(helloSpeaker.speak("HS"));
-    // console.log(speak(names[namen]));
-  } else {
-    console.log(byeSpeaker.speak("HS"));
-  }
-}
+      // STEP 12:
+      // Compare the 'firstLetter' retrieved in STEP 11 to lower case
+      // 'j'. If the same, call byeSpeaker's 'speak' method with the current name
+      // in the loop. Otherwise, call helloSpeaker's 'speak' method with the current
+      // name in the loop.
+      if (reg_test.test(names[namen].toLowerCase())) {
+        console.log(byeSpeaker.speak(names[namen]));
+        // console.log(speak(names[namen]));
+      } else {
+        console.log(helloSpeaker.speak(names[namen]));
+      }
+    }
+
+})(window);
