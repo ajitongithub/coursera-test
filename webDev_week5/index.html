@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wed Dev Week 5 Assignment Ajit</title>
+    <style>
+        body{
+            background-color: beige;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .value_session{
+            font-weight: bolder;
+            padding-left: 23px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Ajit's Form Validation</h1>
+    <form action="#">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" placeholder="First Name" onblur="fname_check(value)">
+                </td>
+                <td>
+                    <span id="fname" class="value_session"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Last Name" onblur="lname_check(value)">
+                </td>
+                <td>
+                    <span id="lname" class="value_session"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" placeholder="Phone Number">
+                </td>
+                <td>
+                    <span id="pnumber" class="value_session">+91 987465312</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Location">
+                </td>
+                <td>
+                    <span id="location" class="value_session">Mumbai, India</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Occupation">
+                </td>
+                <td>
+                    <span id="student" class="value_session">Student</span>
+                </td>
+            </tr>
+            <tr>
+                <td><button type="button">Enter</button></td>
+            </tr>
+            
+            
+            
+        </table>
+    </form>
+</body>
+<script>
+    var fname_check = function(fname){
+        var reffname = new RegExp(/^[A-Za-z\s]{2,15}$/);
+        var fname_var = document.getElementById("fname");
+        if (reffname.test(fname)){
+            fname_var.style.color = "green";
+            fname_var.innerText = "Valid Data";
+        }
+        else{
+            fname_var.style.color = "red";
+            fname_var.innerText = "invalid Data";
+        }
+        
+    }
+    var lname_check = function(lname){
+        var reffname = new RegExp(/^[A-Za-z]{2,15}$/);
+        var lname_var = document.getElementById("lname");
+        if (reffname.test(lname)) {
+            lname_var.style.color = "green";
+            lname_var.innerText = "Valid Data";
+        }
+        else {
+            lname_var.style.color = "red";
+            lname_var.innerText = "invalid Data";
+        }
+    }
+</script>
+</html>
