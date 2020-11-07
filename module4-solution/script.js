@@ -34,7 +34,7 @@ WARNING!!! WARNING!!!
 // See Lecture 52, part 2
 // (Note, Step 2 will be done in the SpeakHello.js file.)
 // console.log(window);
-(function(){
+(function(window){
     var names = ["Yaakov", "John", "jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
     //var reg_test = new RegExp(/^j/);
     // STEP 10:
@@ -50,17 +50,17 @@ WARNING!!! WARNING!!!
       // string object's 'toLowerCase' method on the result so we can compare
       // to lower case character 'j' afterwards.
       // Look up these methods on Mozilla Developer Network web site if needed.
-      var firstLetter = names[namen].charAt(0).toLowerCase();
+      var firstLetter = (names[namen].charAt(0)).toLowerCase();
       // STEP 12:
       // Compare the 'firstLetter' retrieved in STEP 11 to lower case
       // 'j'. If the same, call byeSpeaker's 'speak' method with the current name
       // in the loop. Otherwise, call helloSpeaker's 'speak' method with the current
       // name in the loop.
-      if (firstLetter == "j") {
-        console.log(byeSpeaker.speak(names[namen]));
+      if (firstLetter == 'j') {
+        windows.byeSpeaker.speak(names[namen]);
       } else {
-        console.log(helloSpeaker.speak(names[namen]));
+        windowshelloSpeaker.speak(names[namen]);
       }
     }
 
-})();
+})(window);
