@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wed Dev Week 5 Assignment Ajit</title>
+    <style>
+        body{
+            background-color: beige;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .value_session{
+            font-weight: bolder;
+            padding-left: 23px;
+        }
+        #selected_gender{
+            font-weight: bolder;
+        }
+        #final_result{
+            font-weight: bolder;
+            font-size: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Course Registration Page</h1>
+    <h3>Please fill the student registration page with the details and submit the page.</h3>
+    <!-- Form Program starts here -->
+    <form action="#">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" placeholder="First Name" onblur="fname_check(value)">
+                </td>
+                <td>
+                    <span id="fname" class="value_session"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Last Name" onblur="lname_check(value)">
+                </td>
+                <td>
+                    <span id="lname" class="value_session"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Please select your Gender</span></br>
+                    <input type="radio" name="gender" value="male" onclick="gender_select(value)">
+                    <label for="male">Male</label><br>
+                    <input type="radio" name="gender" value="female" onclick="gender_select(value)">
+                    <label for="female">Female</label><br>
+                    
+                </td>
+                <td>
+                    <span id="selected_gender"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Select all that apply</span></br>
+                    <input type="checkbox" id="have_pc" name="eq_1" value="PC">
+                    <label for="eq_1"> I have a PC</label><br>
+                    <input type="checkbox" id="have_mobile" name="eq_2" value="Mobile">
+                    <label for="eq_2"> I have a Mobile</label><br>
+            
+                </td>
+                <td>
+            
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" placeholder="Roll Number">
+                </td>
+                <td>
+                    <span id="pnumber" class="value_session">5642335</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Location">
+                </td>
+                <td>
+                    <span id="location" class="value_session">Mumbai, India</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" placeholder="Course Name">
+                </td>
+                <td>
+                    <span id="course" class="value_session">Web Development</span>
+                </td>
+            </tr>
+            <tr>
+                <td><button onclick="button_click()">Submit</button></td>
+            </tr>
+            
+            
+            
+        </table>
+    </form>
+    <div id="final_result"></div>
+</body>
+<script>
+    // First Name validation
+    var fname_check = function(fname){
+        var reffname = new RegExp(/^[A-Za-z\s]{2,15}$/);
+        var fname_var = document.getElementById("fname");
+        if (reffname.test(fname)){
+            fname_var.style.color = "green";
+            fname_var.innerText = "Valid Data";
+        }
+        else{
+            fname_var.style.color = "red";
+            fname_var.innerText = "invalid Data";
+        }
+        
+    }
+    // Last Name Check
+    var lname_check = function(lname){
+        var reffname = new RegExp(/^[A-Za-z]{2,15}$/);
+        var lname_var = document.getElementById("lname");
+        if (reffname.test(lname)) {
+            lname_var.style.color = "green";
+            lname_var.innerText = "Valid Data";
+        }
+        else {
+            lname_var.style.color = "red";
+            lname_var.innerText = "invalid Data";
+        }
+    }
+    //For gender selection feedback
+    var gender_select = function(data){
+        document.getElementById("selected_gender").textContent = data;
+        document.getElementById("selected_gender").style.color = "green";
+    }
+    // Button Check
+    var button_click = function(){
+        document.getElementById("final_result").textContent = "THE FORM IS SUBMITTED";
+        
+    }
+</script>
+</html>
